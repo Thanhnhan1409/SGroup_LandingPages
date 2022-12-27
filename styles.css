@@ -1,6 +1,7 @@
 body{
     margin:0px;
     padding: 0px;
+    background-color: pink;
 }
 *{
     box-sizing: border-box;
@@ -14,7 +15,9 @@ a{
 .main{
     font-family: 'Poppins', sans-serif;
 }
-
+.text-center{
+    text-align: center;
+}
 .navbar{
     position:  relative;
     margin-top: 20px;
@@ -133,11 +136,11 @@ a{
     top:0px;
 }
 .navbar__list--item{
-    margin: 0px 15px;
+    margin: 0px 8px;
+    text-align: center;
 }
 .navbar__list--item a {
     color: white;
-    font-size: 18px;
 }
 
 .navbar__itemlist--dropdown{
@@ -306,25 +309,70 @@ a{
     left: 0;
     right: 0;
 }
-/* count-area */
-#count-area{
+#counter-area{
     position: relative;
-    background-color: white;
+    top:-90px;
+    text-align: center;
+    z-index: -3;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
 }
-.col-number{
+.counter-area-row{
+    margin-top: 80px;
+}
+.counter__line{
+    width: 1px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.2)
+}
+.counter-area-col .col_number{
     color: #602ce1;
     font-size: 47px;
     font-weight: 700;
     display: flex;
     justify-content: center;
 }
-.count-area__col{
-    text-align: center ;
-}
-.count-area__col p{
+
+.counter-area-col p{
+    color: #222222;
+    font-size: 20px;
+    margin-top: 10px;
     font-weight: 600;
-    font-size: 18px;
 }
+/* feature area */
+#features-area{
+    position: relative;
+    top: -80px;
+}
+.feature__btn{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    padding: 8px 0 8px 0;
+    border-radius: 40px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+}
+.feature__btn--color{
+    color: #7c4fe0;
+    padding-right: 8px;
+}
+.feature__btn span{
+    font-weight: 500;
+}
+.feature__title{
+    font-size: 47px;
+    font-weight: 600;
+}
+.feature__content{
+    width: 76%;
+    margin: 4px auto;
+}
+
 @media only screen and (max-width:85.375em)
 {
     .navbar__list{
@@ -349,6 +397,9 @@ a{
     .home__right{
         justify-content: right;
     }
+    .row{
+        justify-content: center;
+    }
 }
 @media only screen and (max-width: 46.1875em){
     .navbar{
@@ -371,7 +422,11 @@ a{
         width: 100%;
     }
     .img__smartphone{
-        width: 270px;
-        height: 550px;
+        width: 200px;
+        height: 500px;
+    }
+    .img__mobile{
+        width: 140px;
+        height: 40px;
     }
 }
