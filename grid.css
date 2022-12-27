@@ -114,7 +114,7 @@
 /* tablet */
 @media (min-width: 740px) and (max-width:1023px) {
     .wide {
-        width: 644px;
+        width: 744px;
     }
     .col {
         padding-left: 8px;
@@ -246,7 +246,7 @@
 /*  > PC low resolution */
 @media (min-width: 1024px) and (max-width:1239px) {
     .wide {
-        width: 984px;
+        width: 764px;
     }
     .wide .row {
         margin-left: -12px;
@@ -254,10 +254,10 @@
     }
     .wide .col {
         padding-left: 12px;
-        padding-right: 122px;
+        padding-right: 12px;
     }
     .wide .l-0{
-        display: none;;
+        display: none;
     }
     .wide .l-1,
     .wide .l-2,
