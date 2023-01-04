@@ -36,6 +36,10 @@ a{
     margin: 0 auto;
     padding: 10px 14vw 1vw 14vw;
 }
+.navbar-sticky img{
+    content: url(./Image/logo.png);
+    margin-top: 0;
+}
 @keyframes header-scroll{
     from{
         transform: translateY(-100%);
@@ -47,7 +51,6 @@ a{
     }
 }
 .navbar-sticky img{
-    background-image: linear-gradient(-47deg, #8731E8 0%, #4528DC 100%); /* Black background with opacity */
     margin-top: 0;
 }
 .navbar-sticky .navbar__list--item a{
@@ -1119,8 +1122,8 @@ a{
     /* background-attachment: fixed; */
 }
 #download__under{
-    background-image: url('./Image/smartphoneinsunset.jpg');
-    z-index: -1;
+    background-image: url('./Image/download-bg.jpg');
+    z-index: -2;
     position: absolute;
     top: 0;
     left: 0;
@@ -1128,6 +1131,16 @@ a{
     bottom: 0;
     object-fit: cover;
     background-attachment: fixed;
+}
+.download--overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(16, 16, 45, 1);
+    opacity: 0.80;
+    z-index: -1;
 }
 .download__content {
     padding: 50px 0px;
@@ -1300,13 +1313,12 @@ a{
 /* footer area */
 #footer-area{
     padding-top: 100px;
+    z-index: -9; 
+}
+.footer__top{
+    padding-bottom: 70px;
+}
 
-    z-index: -2; 
-    /* background-attachment: scroll; */
-}
-.footer--logo{
-    background-image: linear-gradient(-47deg, #8731E8 0%, #4528DC 100%);
-}
 .footer__content h2{
     font-weight: 550;
     margin: 0;
@@ -1373,15 +1385,21 @@ a{
     color:#7c4fe0;
 }
 .footer__bottom{
-    border-top: 1px solid #5f5e5e;
-    padding: 15px 0px;
+    border-top: 1px solid #757474;
+    padding: 20px 0px;
 }
 .footer__bottom--left{
     color: #5b5a5a;
 }
 .footer__bottom--right{
     text-align: right;
-    color: #5b5a5a;
+    color: #3e3e3e;
+}
+.footer__bottom--right a{
+    color:#3e3e3e;
+}
+.footer__bottom--right a:hover{
+    color: #7c4fe0;
 }
 @media only screen and (min-width: 740px) and (max-width: 1023px){
     .home__content h1{
