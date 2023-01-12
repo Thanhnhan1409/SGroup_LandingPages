@@ -14,6 +14,21 @@ a{
 }
 .main{
     font-family: 'Poppins', sans-serif !important;
+    height: 688vw;
+}
+#top-up {
+    background-color: #3c3c3c;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    z-index: 9999;
+    font-size: 20px;
+    color: white;
+    bottom: 20px;
+    right: 15px;
+    opacity: 0.8;
+    display: none;
 }
 .text-center{
     text-align: center;
@@ -149,36 +164,15 @@ a{
 
 .navbar__mobile--dropdown{
     position: relative;
-    left: -20px;
-    top:0px;
+    left: -40px;
+    top:10px;
     font-size: 13px;
     margin-bottom: 30px;
     line-height: 2.5;
     font-weight: 600;
     display: none; 
-    opacity: 0;
-    transform: translateY(-100%);
-}
-.checbox--homelist:checked ~ .navbar__mobile--dropdown{
-    display: block; 
-    opacity: 1;
-    transform: translateY(-0%);
 }
 
-.checkbox--Pages{
-    position: absolute;
-    left: 80px;
-    top: 165px;
-    visibility: hidden;
-}
-.checkbox--Pages:checked ~ .navbar__mobile--dropdown{
-    display:block;
-    opacity: 1;
-    transform: translateY(0);
-}
-.checkbox--Pages:checked ~ .nav__mobile--itemshome{
-    display: none;
-}
 /* PC */
 .navbar__list{
     display: flex;
@@ -388,8 +382,10 @@ a{
 .counter-area-col p{
     color: #222222;
     font-size: 20px;
-    margin-top: 10px;
     font-weight: 600;
+}
+.count-line{
+    border-right: 1px solid rgb(200, 198, 198);
 }
 /* feature area */
 #features-area{
@@ -703,6 +699,9 @@ a{
     padding: 0% 12%;
     color: rgb(96, 95, 95);
     font-weight: 400;
+}
+.interface__text--short{
+    display: none;
 }
 .slick-slider{
     margin-top: 5%;
@@ -1038,6 +1037,7 @@ a{
     margin: 0 auto;
 }
 .team__header--shorttext{
+    color: #5b5a5a;
     display: none;
 }
 .team__header--longtext{
@@ -1123,6 +1123,7 @@ a{
 }
 #download__under{
     background-image: url('./Image/download-bg.jpg');
+    background-repeat: no-repeat;
     z-index: -2;
     position: absolute;
     top: 0;
@@ -1170,7 +1171,7 @@ a{
 /* subscribe area */
 #subscribe-area{
     position: relative;
-    height: 500px;
+    height: auto;
     overflow: hidden;
 }
 .subcribe__bg{
@@ -1210,13 +1211,13 @@ a{
     background-color:#7c4fe0;
     font-weight: 450;
     color: white;
-    padding: 20px 330px;
+    padding: 20px 31.5%;
     border-radius: 5px;
 }
 /* contact area */
 #contact-area{
     background-color: #f6f9fe;
-    padding: 50px 0;
+    padding: 50px 0px 130px 0px;
 }
 .contact__header{
     padding-bottom: 50px;
@@ -1292,6 +1293,7 @@ a{
     font-family: 'Poppins', sans-serif;
     min-height: 50px;
     color: #727070;
+    margin-bottom: 30px;
 }
 .box-message{
     height: 200px;
@@ -1303,9 +1305,9 @@ a{
     color: white;
     height: 50px;
     border-radius: 5px;
-    margin-top: 20px;
     font-size: 16px;
-    font-weight: 540;
+    font-weight: 500;
+    padding: 15px 35.5%;
 }
 .contact__submit--icon i{
     padding-right: 10px;
@@ -1313,7 +1315,18 @@ a{
 /* footer area */
 #footer-area{
     padding-top: 100px;
-    z-index: -9; 
+    z-index: -999;
+    position: relative;
+}
+.footer-bg{
+    background-image: url(./Image/welcome-bg.jpg);
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    z-index: -99;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .footer__top{
     padding-bottom: 70px;
@@ -1366,6 +1379,12 @@ a{
 .icons:hover .icon-hidden{
     transform: translateY(240%);
 }
+#footer-area{
+    position: fixed;
+    bottom: 0;
+    left: 240px;
+    z-index: -99;
+}
 .footer__top--download img{
     width: 170px;
     height: auto;
@@ -1411,6 +1430,9 @@ a{
     }
     .home__right{
         justify-content: right;
+    }
+    .col2-line{
+        border: none;
     }
     .feature__title{
         font-size: 37px;
@@ -1515,6 +1537,9 @@ a{
         width: 205px;
         margin-bottom: 10px;
     }
+    #download__under{
+        background-size: 1200px auto;
+    }
     .download__content h1{
         font-size: 40px;
         padding: 0px 20px;
@@ -1523,11 +1548,46 @@ a{
     .download__content--long{
         padding: 0 5%;
     }
+    .download__logo img {
+        width: 170px;
+        height: 50px;
+    }
+    .subscribe__content h1{
+        font-size: 37px;
+    }
+    .subscribe__content p{
+        padding: 0 5%;
+    }
+    .subcribe__email{
+        width: 90%;
+    }
+    .subcribe__button{
+        width: 100%;
+        padding: 20px 39%;
+    }
+    .contact__submit{
+        padding: 15px 26%;
+    }
+    #footer-area{
+        position: relative;
+        left: 0;
+    }
+    .footer__top--download img{
+        width: 150px;
+        height: auto;
+        padding-top:10px;
+    }
+    .footer__bottom div{
+        font-size: 14.5px;
+    }
 }
 
 @media only screen and (max-width: 739px){
     .navbar{
         padding: 0px 40px;
+    }
+    .navbar-sticky .fa-bars{
+        padding: 0;
     }
     .home__content{
         flex-direction: column;
@@ -1544,6 +1604,9 @@ a{
     }
     .home__right{
         width: 100%;
+    }
+    .col2-line{
+        border: none;
     }
     .img__smartphone{
         width: 240px;
@@ -1568,7 +1631,7 @@ a{
         margin:0px 20px ;
     }
     #service-area{
-        padding: 80px 40px;
+        padding: 80px 20px;
         top: -110px;
     }
     .service__right{
@@ -1580,7 +1643,7 @@ a{
         padding-bottom: 20px;
     }
     #discover-area{
-        padding: 0px 40px;
+        padding: 0px 20px;
     }
     .discover__left{
         display: flex;
@@ -1613,17 +1676,23 @@ a{
         right: 0px;
     }
     #interface-area{
-        padding: 0px 30px;
+        padding: 0px 20px;
     }
     .interface__content h1{
-        font-size: 35px;
+        font-size: 30px;
+    }
+    .interface__text--short{
+        display: block;
+    }
+    .interface__text--long{
+        display: none;
     }
     .interface__content p{
         padding: 0;
     }
     #reviews-area{
         margin-top: 120px;
-        padding: 0 30px;
+        padding: 0 20px;
     }
     .reviews__header h1{
         font-size: 30px;
@@ -1639,7 +1708,7 @@ a{
         left: 4px;
     }
     #price-area{
-        padding: 30px 30px;
+        padding: 30px 20px;
     }
     .price__content h1{
         font-size: 30px;
@@ -1659,7 +1728,7 @@ a{
         margin: 0px auto;
     }
     #questions-area{
-        padding: 0px 30px;
+        padding: 0px 20px;
     }
     .questions--header h1{
         font-size: 30px;
@@ -1676,7 +1745,7 @@ a{
         display: block;
     }
     #team-area{
-        padding: 0px 30px;
+        padding: 0px 20px;
     }
     .team__header h1{
         font-size: 30px;
@@ -1684,6 +1753,7 @@ a{
     .team__header--shorttext{
         display: block;
         padding: 0;
+        margin-bottom: 60px;
     }
     .team__header--longtext{
         display: none;
@@ -1695,7 +1765,10 @@ a{
         margin-bottom: 10px;
     }
     #download-area{
-        padding: 0 30px;
+        padding: 0 20px;
+    }
+    #download__under{
+        background-size: 900px auto;
     }
     .download__content h1{
         margin: 0;
@@ -1707,5 +1780,59 @@ a{
     .download__content--short{
         display: block;
         color: white;
+    }
+    .download__logo img {
+        width: 130px;
+        height: 50px;
+    }
+    #subcribe-area{
+        padding: 0px 20px;
+    }
+    .subscribe__content h1{
+        font-size: 35px;
+    }
+    .subscribe__content p{
+        padding: 0 2%;
+    }
+    .subcribe__email{
+        width: 90%;
+    }
+    .subcribe__button{
+        width: 100%;
+        padding: 20px 35.5%;
+        margin-bottom: 50px;
+    }
+    #contact-area{
+        padding: 40px 20px;
+    }
+    .contact__header h1{
+        font-size: 35px;
+    }
+    .contact__header--shortercontent{
+        display: block;
+    }
+    .contact__header--longercontent{
+        display: none;
+        padding: 0;
+    }
+    .contact__header {
+        padding-bottom: 20px;
+    }
+    .contact__submit{
+        padding: 15px 26%;
+    }
+    #footer-area{
+        position: relative;
+        left: 0;
+        padding: 0px 20px;
+        padding-top: 40px;
+    }
+    .footer__top--download img{
+        width: 140px;
+        height: auto;
+        padding-top:10px;
+    }
+    .footer__bottom div{
+        text-align: center;
     }
 }

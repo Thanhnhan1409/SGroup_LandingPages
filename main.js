@@ -1,3 +1,53 @@
+//scroll header
+document.addEventListener("DOMContentLoaded",function() {
+	var menu = document.querySelectorAll('header.navbar');
+	var menu = menu[0];
+		//Truy xuất header
+		var trangthai="duoi400";
+	window.addEventListener("scroll",function(){
+	var x = pageYOffset;
+	if(x > 400){
+		if(trangthai == "duoi400")
+		{
+			trangthai="tren400";
+			menu.classList.add('navbar-sticky');
+		}
+	}
+	else{
+		if(trangthai=="tren400"){
+			menu.classList.remove('navbar-sticky');
+			trangthai="duoi400";}
+		}
+	})
+	})
+
+//nav-mobile
+	let parent = document.getElementsByClassName("nav-listitem");
+	let parentChild = document.getElementsByClassName("navbar__mobile--dropdown");
+	let isClose = [];
+	
+	for(let k = 0; k < parent.length; k++){
+		isClose.push('false');
+	}
+	
+	for (let i = 0; i < parent.length; i++) {
+		parent[i].addEventListener("click", displayParentChild);
+		function displayParentChild() {
+			for (let j = 0; j <= parent.length; j++) {
+				if (isClose[j] == true && isClose[j] != isClose[i]) {
+					parentChild[j].style.display = "none";
+					isClose[j] = false;
+				}
+			}
+			if (isClose[i] == false) {
+				parentChild[i].style.display = "block";
+				isClose[i] = true;
+			} else {
+				parentChild[i].style.display = "none";
+				isClose[i] = false;
+			}
+		}
+	}
 // Hàm tăng số
 function animateNumber(finalNumber, duration = 0, startNumber = 0, callback) {
 	const startTime = performance.now()
@@ -16,7 +66,6 @@ function animateNumber(finalNumber, duration = 0, startNumber = 0, callback) {
 }
   
 
-// Hàm bắt sự kiện scroll tăng số
 document.addEventListener("DOMContentLoaded",function() {
 	var menu = document.querySelectorAll('header.navbar');
 	var menu = menu[0];
@@ -90,25 +139,41 @@ $(document).ready(function () {
 	  cssEase: 'linear',
     });
   });
-//scroll header
-  document.addEventListener("DOMContentLoaded",function() {
-	var menu = document.querySelectorAll('header.navbar');
+
+//scroll footer
+document.addEventListener("DOMContentLoaded",function() {
+	var menu = document.querySelectorAll('footer.footer__area');
 	var menu = menu[0];
-		//Truy xuất header
-		var trangthai="duoi400";
+	let trangthai="duoi9000";
 	window.addEventListener("scroll",function(){
-	var x = pageYOffset;
-	if(x > 400){
-		if(trangthai == "duoi400")
+	let x = pageYOffset;
+	if(x < 9000){
+		if(trangthai == "duoi9000")
 		{
-			trangthai="tren400";
-			menu.classList.add('navbar-sticky');
+			trangthai="tren9000";
+			menu.style.display='none';
 		}
 	}
 	else{
-		if(trangthai=="tren400"){
-			menu.classList.remove('navbar-sticky');
-			trangthai="duoi400";}
+		if(trangthai=="tren9000"){
+			menu.style.display='block';
+			trangthai="duoi9000";}
 		}
 	})
 	})
+
+// back-to-top
+let offset = 500;
+let duration = 350;
+function scrollToTop(){
+	window.addEventListener("scroll",function(){
+	if ($(this).scrollTop() > offset)
+		$('#top-up').fadeIn(duration);
+	else
+		$('#top-up').fadeOut(duration);
+	});
+	$('#top-up').click(function () {
+	$('body,html').animate({scrollTop: 0}, 500);
+	});
+};
+scrollToTop();
