@@ -3,22 +3,32 @@ document.addEventListener("DOMContentLoaded",function() {
 	var menu = document.querySelectorAll('header.navbar');
 	var menu = menu[0];
 		//Truy xuất header
-		var trangthai="duoi400";
+		var state="under400";
 	window.addEventListener("scroll",function(){
 	var x = pageYOffset;
 	if(x > 400){
-		if(trangthai == "duoi400")
+		if(state == "under400")
 		{
-			trangthai="tren400";
+			state="over400";
 			menu.classList.add('navbar-sticky');
 		}
 	}
 	else{
-		if(trangthai=="tren400"){
+		if(state=="over400"){
 			menu.classList.remove('navbar-sticky');
-			trangthai="duoi400";}
+			state="under400";}
 		}
 	})
+	})
+//ham feature-area animations
+	const box = document.getElementsByClassName('features__box--content');
+	window.addEventListener("scroll",function(){
+	var x = pageYOffset;
+	if(x > 780){
+		box[0].classList.add('box__fully');
+		box[1].classList.add('box__live');
+		box[2].classList.add('box__secure');
+	}
 	})
 
 //nav-mobile
@@ -67,16 +77,16 @@ function animateNumber(finalNumber, duration = 0, startNumber = 0, callback) {
   
 
 document.addEventListener("DOMContentLoaded",function() {
-	var menu = document.querySelectorAll('header.navbar');
-	var menu = menu[0];
+	var c = document.querySelectorAll('header.navbar');
+	var c = c[0];
 		//Truy xuất header
-		var trangthai="duoi200";
+		var statecount="under200";
 	window.addEventListener("scroll",function(){
 	var x = pageYOffset;
 	if(x > 200){
-		if(trangthai == "duoi200")
+		if(statecount == "under200")
 		{
-			trangthai="tren200";
+			statecount="over200";
 			
 				animateNumber(10, 850, 10, function (number) {
 				  const formattedNumber = number.toLocaleString()
@@ -101,8 +111,8 @@ document.addEventListener("DOMContentLoaded",function() {
 		}
 	}
 	else{
-		if(trangthai=="tren200"){
-			trangthai="duoi200";}
+		if(statecount=="over200"){
+			statecount="under200";}
 		}
 	})
 	})
@@ -140,24 +150,33 @@ $(document).ready(function () {
     });
   });
 
+// ham price-area animation
+const price = document.getElementsByClassName('price-box');
+	window.addEventListener("scroll",function(){
+	var x = pageYOffset;
+	if(x >5500){
+		price[0].classList.add('price__box--left');
+		price[1].classList.add('price__box--right');
+	}
+	})
 //scroll footer
 document.addEventListener("DOMContentLoaded",function() {
-	var menu = document.querySelectorAll('footer.footer__area');
-	var menu = menu[0];
-	let trangthai="duoi9000";
+	var footerInf = document.querySelectorAll('footer.footer__area');
+	var footerInf = footerInf[0];
+	let stateFooter="under9000";
 	window.addEventListener("scroll",function(){
 	let x = pageYOffset;
 	if(x < 9000){
-		if(trangthai == "duoi9000")
+		if(stateFooter == "under9000")
 		{
-			trangthai="tren9000";
-			menu.style.display='none';
+			stateFooter="over9000";
+			footerInf.style.display='none';
 		}
 	}
 	else{
-		if(trangthai=="tren9000"){
-			menu.style.display='block';
-			trangthai="duoi9000";}
+		if(stateFooter=="over9000"){
+			footerInf.style.display='block';
+			stateFooter="under9000";}
 		}
 	})
 	})

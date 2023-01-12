@@ -11,6 +11,7 @@ ul li {
 }
 a{
     text-decoration: none;
+    cursor: pointer;
 }
 .main{
     font-family: 'Poppins', sans-serif !important;
@@ -89,6 +90,7 @@ a{
     font-size: 33px;
     color: white;
     visibility: hidden;
+    cursor: pointer;
 }
 .nav__overlay--sTalet{
     position: fixed;
@@ -131,6 +133,7 @@ a{
     font-size: 28px;
     padding: 20px;
     color: rgb(179, 178, 178);
+    cursor: pointer;
 }
 .checkbox--list:checked ~ .nav__overlay--sTalet{
     opacity: 1;
@@ -320,6 +323,7 @@ a{
     align-items: center;
     margin: 30px 0px 20px 0px;
 }
+
 .img__mobile{
     width: 190px;
     height: 60px;
@@ -748,6 +752,8 @@ a{
   position: relative;
   top:80px;
   left: -20px;
+  cursor: pointer;
+
 }
 .slick-dots .slick-active button {
   background-color: #6610f2;
@@ -937,7 +943,9 @@ a{
     border-radius: 8px;
     /* text-align: center; */
 }
-
+.price-box{
+    opacity: 0;
+}
  .price__box--left{
     animation: price-left 1s linear forwards;  
 }
@@ -1313,20 +1321,13 @@ a{
     padding-right: 10px;
 }
 /* footer area */
+
 #footer-area{
     padding-top: 100px;
-    z-index: -999;
-    position: relative;
-}
-.footer-bg{
-    background-image: url(./Image/welcome-bg.jpg);
-    background-attachment: fixed;
-    position: absolute;
-    top: 0;
-    z-index: -99;
-    left: 0;
-    right: 0;
+    position: fixed;
     bottom: 0;
+    left: 240px;
+    z-index: -2;
 }
 .footer__top{
     padding-bottom: 70px;
@@ -1368,7 +1369,7 @@ a{
     padding: 10px 16px;
 }
 .icon-hidden{
-    transform: translateY(-100%);
+    transform: translateY(-170%);
     position: absolute;
     left: 14px;
     top:-25px;
@@ -1378,12 +1379,6 @@ a{
 }
 .icons:hover .icon-hidden{
     transform: translateY(240%);
-}
-#footer-area{
-    position: fixed;
-    bottom: 0;
-    left: 240px;
-    z-index: -99;
 }
 .footer__top--download img{
     width: 170px;
