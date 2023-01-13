@@ -16,6 +16,7 @@ a{
 .main{
     font-family: 'Poppins', sans-serif !important;
     height: 688vw;
+    z-index: -2;
 }
 #top-up {
     background-color: #3c3c3c;
@@ -37,6 +38,7 @@ a{
 .navbar{
     position:  relative;
     margin-top: 20px;
+    z-index: 99;
 }
 .navbar-sticky{
     position: fixed;
@@ -184,7 +186,7 @@ a{
     top:0px;
 }
 .navbar__list--item{
-    margin: 0px 8px;
+    margin: 0px 6px;
     text-align: center;
 }
 .navbar__list--item a {
@@ -286,22 +288,22 @@ a{
     bottom: 0;
     opacity: 0.9;
     position: absolute;
-    z-index: -1;
-    background-image: linear-gradient(-47deg, #8731E8 0%, #4528DC 100%); /* Black background with opacity */
+    z-index: -2;
+    background-image: linear-gradient(-47deg, #8731E8 0%, #4528DC 100%); 
 }
 #home{
     width: 100%;
-    background-image: url("https://scontent.fdad1-2.fna.fbcdn.net/v/t1.6435-9/95125765_608293559764932_2917841441910685696_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=y_TgyQLlc0MAX_inqdi&tn=PQsvLUpt1xFfc08y&_nc_ht=scontent.fdad1-2.fna&oh=00_AfDEH5rbgGfebORFIIsKf1pzFs-uvlVJ28luUxNGjtPypA&oe=63C92DC9");
     background: rgba(0, 0, 0, 0) url(./Image/welcome-bg.jpg) no-repeat scroll center center/cover;
     position: relative;
     top:-90px;
-    z-index: -1;
+    z-index: 2;
     object-fit: contain;
     padding: 120px 0px;
 }
 .home__content{
     justify-content: space-between;
     margin: 0 auto;
+    z-index: 3;
 }
 .home__left{
     width: 50%;
@@ -363,7 +365,7 @@ a{
     position: relative;
     top:-90px;
     text-align: center;
-    z-index: -3;
+    z-index: 3;
     width: 100%;
     background-color: rgb(255, 255, 255);
 }
@@ -1172,6 +1174,7 @@ a{
 .download__logo img {
     width: 190px;
     height: 60px;
+    padding: 5px;
 }
 .download__content i{
     color: white;
@@ -1327,7 +1330,7 @@ a{
     position: fixed;
     bottom: 0;
     left: 240px;
-    z-index: -2;
+    z-index: -1;
 }
 .footer__top{
     padding-bottom: 70px;
@@ -1369,13 +1372,13 @@ a{
     padding: 10px 16px;
 }
 .icon-hidden{
-    transform: translateY(-170%);
+    transform: translateY(450%);
     position: absolute;
     left: 14px;
     top:-25px;
 }
 .icons:hover .icon-visible{
-    transform: translateY(200%);
+    transform: translateY(-220%);
 }
 .icons:hover .icon-hidden{
     transform: translateY(240%);

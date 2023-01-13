@@ -177,6 +177,7 @@ document.addEventListener("DOMContentLoaded",function() {
 		if(stateFooter=="over9000"){
 			footerInf.style.display='block';
 			stateFooter="under9000";}
+
 		}
 	})
 	})
