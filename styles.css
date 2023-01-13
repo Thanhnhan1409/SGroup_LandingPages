@@ -16,7 +16,8 @@ a{
 .main{
     font-family: 'Poppins', sans-serif !important;
     height: 688vw;
-    z-index: -2;
+    /* z-index: -2; */
+    position: relative;
 }
 #top-up {
     background-color: #3c3c3c;
@@ -1229,6 +1230,8 @@ a{
 #contact-area{
     background-color: #f6f9fe;
     padding: 50px 0px 130px 0px;
+    position: relative;
+    z-index: 8;
 }
 .contact__header{
     padding-bottom: 50px;
@@ -1330,7 +1333,7 @@ a{
     position: fixed;
     bottom: 0;
     left: 240px;
-    z-index: -1;
+    z-index: 1;
 }
 .footer__top{
     padding-bottom: 70px;

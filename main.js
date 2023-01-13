@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded",function() {
 	let stateFooter="under9000";
 	window.addEventListener("scroll",function(){
 	let x = pageYOffset;
-	if(x < 9000){
+	if(x < 9100){
 		if(stateFooter == "under9000")
 		{
 			stateFooter="over9000";
