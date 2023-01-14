@@ -21,13 +21,21 @@ document.addEventListener("DOMContentLoaded",function() {
 	})
 	})
 //ham feature-area animations
-	const box = document.getElementsByClassName('features__box--content');
+	const box = document.getElementsByClassName('feature__box');
 	window.addEventListener("scroll",function(){
 	var x = pageYOffset;
 	if(x > 840){
 		box[0].classList.add('box__fully');
 		box[1].classList.add('box__live');
 		box[2].classList.add('box__secure');
+		for(let i=0; i<box.length; i++){
+			box[i].style.opacity=1;
+		}
+	}
+	else{
+		for(let i=0; i<box.length; i++){
+			box[i].style.opacity=0;
+		}
 	}
 	})
 
@@ -58,30 +66,17 @@ document.addEventListener("DOMContentLoaded",function() {
 			}
 		}
 	}
-//khai bao hai class parent va parentchild
-	// let close = document.getElementsByClassName('navbar__sTablet--close');
-	// let items = document.getElementsByClassName('navbar__mobile--dropdown');
+//close nav-mobile
+	let close = document.getElementsByClassName('navbar__sTablet--close');
+	let items = document.getElementsByClassName('navbar__mobile--dropdown');
+	for (let i = 0; i < close.length; i++) {
+		close[i].addEventListener('click', displayItems)
+		function displayItems() {
+			for(let j=0; items.length; j++)
+				items[j].style.display = 'none';
+		}
+	}
 	
-	// if()
-	// //tao mot bien gia tri de check trang thai
-	// let _isClose = true;
-	
-	// // vong lap vi khi khai bao getElementsByClassName no chi lay gia tri theo mang
-	// for (let i = 0; i < 2; i++) {
-	// 	close.addEventListener('click', displayItems)
-	// 	function displayItems() {
-	// 		if (_isClose == true) {
-	// 			items[i].style.display = 'none';
-	// 			_isClose = false;
-	
-	// 		}
-	// 	}
-	// }
-	// let close = document.getElementsByClassName('navbar__sTablet');
-	// let items = document.getElementsByClassName('navbar__mobile--dropdown');
-	// if (close.style.visibility=='hidden'){
-	// 	for()
-	// }
 // Hàm tăng số
 function animateNumber(finalNumber, duration = 0, startNumber = 0, callback) {
 	const startTime = performance.now()
