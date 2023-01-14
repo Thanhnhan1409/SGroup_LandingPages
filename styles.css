@@ -3,6 +3,9 @@ body{
     padding: 0px;
     overflow-x: hidden;
 }
+html{
+    scroll-behavior: smooth;
+}
 *{
     box-sizing: border-box;
 }
@@ -30,8 +33,12 @@ a{
     color: white;
     bottom: 20px;
     right: 15px;
-    opacity: 0.8;
+    opacity: 0.7;
+    transition: opacity 0.5s;
     display: none;
+}
+#top-up:hover{
+    opacity: 0.8;
 }
 .text-center{
     text-align: center;
@@ -73,11 +80,18 @@ a{
     margin-top: 0;
 }
 .navbar-sticky .navbar__list--item a{
-    color: #444;
+    color: #2c2e30;
+}
+.navbar-sticky .fa-caret-down{
+    color: #d3d3d3;
 }
 .navbar-sticky .fa-bars{
-    color: #444;
+    color: #7c7c7d;
     padding-right: 30px ;
+}
+.navbar-sticky .pages-item__comingsoon{
+    color: #2c2e30;
+    font-size: 13px;
 }
 /* navbar smaller Tablet */
 .checkbox--list{
@@ -155,6 +169,9 @@ a{
     padding: 15px 20px;
     border-bottom: 1px solid rgb(220, 215, 215);
 }
+.navbar__sTablet--dropdown i{
+    color: #d3d3d3;
+}
 .navbar__sTablet--dropdown a{
     color: rgb(71, 70, 70);
 }
@@ -197,7 +214,7 @@ a{
 .navbar__itemlist--dropdown{
     width: 180px;
     line-height: 2.3;
-    color: black;
+    color: #2c2e30;
     padding: 10px 20px;
     position: absolute;
     margin-top: 50px;
@@ -207,11 +224,10 @@ a{
     visibility: hidden;
     transition: 0.2s linear ;
     opacity: 0;
-    font-weight: bold;
     text-align: start;
 }
 .navbar__itemlist--dropdown a{
-    color: black;
+    color: #2c2e30;
     font-size: 12px;
     font-weight: 650;
     line-height: 3;
@@ -238,6 +254,11 @@ a{
 }
 .navbar__list--item:hover .navbar__itemlist--dropdown::after{
     opacity: 1;
+}
+.pages-item__comingsoon{
+    color: #2c2e30;
+    font-size: 13px;
+    font-weight: 650;
 }
 /* Header--pages */
 .pageschild--icon {
@@ -287,7 +308,7 @@ a{
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.9;
+    opacity: 0.94;
     position: absolute;
     z-index: -2;
     background-image: linear-gradient(-47deg, #8731E8 0%, #4528DC 100%); 
@@ -432,9 +453,12 @@ a{
     background-color: #7c4fe0;
     margin: 0 auto;
 }
-.feature__content{
-    width: 76%;
-    margin: 4px 150px;
+.features-area__header p{
+    padding: 0 12%;
+    color: #565656;
+}
+.features__content--short{
+    display: none;
 }
 .features-area__box{
     display: flex !important;
@@ -449,10 +473,11 @@ a{
     border-radius: 5%;
     padding: 30px 15px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    transition: 0.3s ease;
+    transition: all 1s linear;
+    opacity: 0;
 }
 .features__box--content:hover{
-    transform: translateY(-4%);
+    transform: translateY(-4%) !important;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .feature__box p{
@@ -468,7 +493,7 @@ a{
     height: auto;
 }
 .box__fully{
-    animation: fully 0.8s;
+    animation: fully 0.8s forwards;
 }
 @keyframes fully{
     from{
@@ -477,13 +502,14 @@ a{
         visibility: hidden;
     }
     to{
-        transform: translateX(0px);
+        transform: translateX(0px) ;
         opacity: 1;
         visibility: visible;
     }
+    
 }
 .box__live{
-    animation: live 0.8s;
+    animation: live 0.8s forwards;
 }
 @keyframes live{
     from{
@@ -498,7 +524,7 @@ a{
     }
 }
 .box__secure{
-    animation: secure 0.8s;
+    animation: secure 0.8s forwards;
 }
 @keyframes secure{
     from{
@@ -523,8 +549,8 @@ a{
     .nav__overlay--sTalet{
         display: block;
     }
-    
 }
+
 /* service are */
 #service-area{
     background-color: #f6f9fe;  
@@ -569,6 +595,9 @@ a{
     font-size: 17px;
     font-weight: 550;
 }
+.service__button:hover{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
 .service__right{
     text-align: right;
     position: relative;
@@ -603,14 +632,13 @@ a{
 .discover__right--listcontent{
     padding-top: 20px;
     display: flex;
-    color: rgb(91, 90, 90);
+    color: #565656;
     font-size: 15px;
     align-items: center;
 }
 .fa-check{
     color: #6f42c1;
     font-size: 18px;
-    font-weight: 400;
     margin-right: 20px;
 }
 .discover__icon{
@@ -619,12 +647,13 @@ a{
 .discover__icon--box{
     padding: 10px 15px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    color: #602ce1;
+    color: #7c4fe0;
     font-size: 25px;
     margin-right: 15px;
     border-radius: 7%;
     width: 40px;
 }
+
 /* work area */
 #work-area{
     background-image: linear-gradient(-47deg, #8731E8 0%, #4528DC 100%);
@@ -643,6 +672,9 @@ a{
     color: #fff;
     padding: 10px 150px;
     padding-bottom: 40px;
+}
+.work__content--short{
+    display: none;
 }
 .work__box{
     text-align: center;
@@ -768,7 +800,10 @@ a{
 .reviews__header{
     font-weight: 500;
     margin-top: 130px;
-    color: #3e3e3e;
+    color: #565656;
+}
+.reviews__content--short{
+    display: none;
 }
 .review__header--light{
     margin: 0 auto;
@@ -831,8 +866,12 @@ a{
     top: 10px;
 }
 .review__inf--box{
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border: 1px solid rgba(0,0,0,.125);
     border-radius: 2%;
+}
+.review__inf--box:hover{
+    box-shadow: 10px 10px 25px 20px rgba(78, 77, 77, 0.05);
+    
 }
 .review__inf{
     background-color:#f6f9fe ;
@@ -905,8 +944,8 @@ a{
     font-size: 20px;
 }
 .price__pricinginf{
-    margin: 0px 57px;
-    border-bottom: 1px solid rgb(201, 200, 200);
+    margin: 0px 22px;
+    border-bottom: 1px solid rgb(224, 222, 222);
 }
 .price--iconmoney{
     color:#602ce1;
@@ -927,7 +966,7 @@ a{
 .price--inf{
     margin:0px 0px;
     padding: 18px 0px;
-    border-bottom: 1px solid rgb(201, 200, 200);
+    border-bottom: 1px solid rgb(224, 222, 222);
     color: #5b5a5a;
 }
 .price--signup{
@@ -944,16 +983,18 @@ a{
     font-weight: 500;
     padding:15px 30px;
     border-radius: 8px;
-    /* text-align: center; */
+}
+.price--signup a:hover{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 .price-box{
     opacity: 0;
 }
  .price__box--left{
-    animation: price-left 1s linear forwards;  
+    animation: price-left 0.8s linear forwards;  
 }
 .price__box--right{
-    animation: price-right 1s linear forwards;
+    animation: price-right 0.8s linear forwards;
     
 }
 @keyframes price-right{
@@ -1017,6 +1058,7 @@ a{
 }
 .ques__ans h4{
     font-weight: 500;
+    padding: 5px 0px;
 }
 .ques__ans p{
     color: #545353;
@@ -1028,7 +1070,7 @@ a{
 .ques__contact a{
     color: #222222;
     box-shadow: 0 1.5px black;
-    text-decoration: solid !important; 
+    text-decoration: underline !important; 
 }
 /* team are */
 #team-area{
@@ -1197,7 +1239,7 @@ a{
 
 }
 .subscribe__content{
-    padding: 100px 0;
+    padding: 85px 0;
 }
 .subscribe__content h1{
     font-size: 47px;
@@ -1205,7 +1247,7 @@ a{
     margin: 0;
 }
 .subscribe__content p{
-    color: #3e3e3e;
+    color: #565656;
     padding: 10px 16%;
 }
 .subcribe__email{
@@ -1225,6 +1267,9 @@ a{
     color: white;
     padding: 20px 31.5%;
     border-radius: 5px;
+}
+.subcribe__button:hover{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 /* contact area */
 #contact-area{
@@ -1323,6 +1368,9 @@ a{
     font-weight: 500;
     padding: 15px 35.5%;
 }
+.contact__submit:hover{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
 .contact__submit--icon i{
     padding-right: 10px;
 }
@@ -1413,7 +1461,7 @@ a{
 }
 .footer__bottom--right{
     text-align: right;
-    color: #3e3e3e;
+    color: #565656;
 }
 .footer__bottom--right a{
     color:#3e3e3e;
@@ -1432,16 +1480,12 @@ a{
     .home__right{
         justify-content: right;
     }
-    .col2-line{
-        border: none;
-    }
     .feature__title{
         font-size: 37px;
         font-weight: 540;
     }
-    .feature__content{
-        width: 100%;
-        margin: 4px 10px 0px;  
+    .features-area__header p{
+        padding: 0 5%;
     }
     .features-area__box{
         justify-content: flex-start;
@@ -1463,8 +1507,13 @@ a{
         font-weight: 550;
         padding-bottom: 20px;
     }
+
     .discover__content{
         flex-direction: column-reverse;
+    }
+    .discover__left img{
+        width: 660px;
+        height: auto;
     }
     .discover__right h1{
         font-size: 34px;
@@ -1484,7 +1533,7 @@ a{
         padding: 0% 5%;
     }
     #reviews-area{
-        margin-top: 120px;
+        margin-top: 180px;
     }
     .reviews__header h1{
         font-size: 37px;
@@ -1525,17 +1574,18 @@ a{
         padding: 0 5%;
         color: #545353;
     }
+    #team-area{
+       padding-top:100px;
+    }
     .team__header h1{
         font-size: 35px;
     }
-    .team__header--shorttext{
-        display: block;
-    }
     .team__header--longtext{
-        display: none;
-    }
+        padding: 0 5%;
+    } 
     .team__person--inf{
         width: 205px;
+        height: 205px;
         margin-bottom: 10px;
     }
     #download__under{
@@ -1550,8 +1600,11 @@ a{
         padding: 0 5%;
     }
     .download__logo img {
-        width: 170px;
-        height: 50px;
+        width: 180px;
+        height: 60px;
+    }
+    .subcribe__bg{
+        top: 0;
     }
     .subscribe__content h1{
         font-size: 37px;
@@ -1566,8 +1619,14 @@ a{
         width: 100%;
         padding: 20px 39%;
     }
+    .contact__header h1{
+        font-size: 36px;
+    }
     .contact__submit{
         padding: 15px 26%;
+    }
+    .contact__header--longercontent{
+        padding: 0 5%;
     }
     #footer-area{
         position: relative;
@@ -1617,13 +1676,22 @@ a{
         width: 150px;
         height: auto;
     }
-    .feature__content{
-        width: 100%;
-        margin: 4px 10px 0px; 
+    .counter-area-col .col_number {
+        font-size: 47px;
+    }
+    #feartures-area{
+        padding: 0px 20px;
+    }
+    .features__content--long{
+        display: none;
     }
     .feature__title{
         font-size: 35px;
         font-weight: 540;
+    }
+    .features__content--short{
+        display: block;
+        padding: 0 !important;
     }
     .feature__box{
         margin: 0px;
@@ -1639,7 +1707,7 @@ a{
         display: none;
     }
     .service__left h1{
-        font-size: 30px;
+        font-size: 32px;
         font-weight: 550;
         padding-bottom: 20px;
     }
@@ -1659,7 +1727,7 @@ a{
         text-align: left;
     }
     .discover__right h1{
-        font-size: 30px;
+        font-size: 32px;
         font-weight: 550;
     }
     .discover__content{
@@ -1667,10 +1735,20 @@ a{
     }
     #work-area{
         padding: 0px 20px;
+        padding-bottom: 40px;
+    }
+    .work__content h1{
+        font-size: 32px;
     }
     .work__content p{
-        padding: 10px 20px;
-        padding-bottom: 40px;
+        padding: 10px 0px;
+        padding-bottom: 30px;
+    }
+    .work__content--short{
+        display: block;
+    }
+    .work__content--long{
+        display: none;
     }
     .work__box--iconnext{
         visibility: hidden;
@@ -1680,10 +1758,11 @@ a{
         padding: 0px 20px;
     }
     .interface__content h1{
-        font-size: 30px;
+        font-size: 32px;
     }
     .interface__text--short{
         display: block;
+        margin-bottom: 40px;
     }
     .interface__text--long{
         display: none;
@@ -1696,11 +1775,17 @@ a{
         padding: 0 20px;
     }
     .reviews__header h1{
-        font-size: 30px;
+        font-size: 32px;
         padding: 0;
     }
     .reviews__header p{
-        padding: 0 5%;
+        padding: 0;
+    }
+    .reviews__content--long{
+        display: none;
+    }
+    .reviews__content--short{
+        display: block;
     }
     .review__inf--box{
         margin-top: 20px;
@@ -1712,7 +1797,7 @@ a{
         padding: 30px 20px;
     }
     .price__content h1{
-        font-size: 30px;
+        font-size: 31px;
     }
     .price__context--shorter{
         display: block;
@@ -1732,7 +1817,7 @@ a{
         padding: 0px 20px;
     }
     .questions--header h1{
-        font-size: 30px;
+        font-size: 32px;
         padding: 0;
     }
     .price--signup a{
@@ -1749,7 +1834,7 @@ a{
         padding: 0px 20px;
     }
     .team__header h1{
-        font-size: 30px;
+        font-size: 32px;
     }
     .team__header--shorttext{
         display: block;
@@ -1761,7 +1846,9 @@ a{
     }
     .team__person--inf{
         min-width: 275px;
+        min-height: 285px;
         max-width: 400px;
+        max-height: 410px;
         margin: 0 auto;
         margin-bottom: 10px;
     }
@@ -1773,7 +1860,7 @@ a{
     }
     .download__content h1{
         margin: 0;
-        font-size: 30px;
+        font-size: 32px;
     }
     .download__content--long{
         display: none;
@@ -1790,10 +1877,16 @@ a{
         padding: 0px 20px;
     }
     .subscribe__content h1{
-        font-size: 35px;
+        font-size: 32px;
     }
     .subscribe__content p{
         padding: 0 2%;
+    }
+    .subcribe__bg{
+        top: 50px;
+        left: -170px;
+        width: 700px;
+        height: auto;
     }
     .subcribe__email{
         width: 90%;
@@ -1807,7 +1900,7 @@ a{
         padding: 40px 20px;
     }
     .contact__header h1{
-        font-size: 35px;
+        font-size: 32px;
     }
     .contact__header--shortercontent{
         display: block;
@@ -1832,6 +1925,9 @@ a{
         width: 140px;
         height: auto;
         padding-top:10px;
+    }
+    .footer__inf--icons{
+        margin-bottom: 30px;
     }
     .footer__bottom div{
         text-align: center;

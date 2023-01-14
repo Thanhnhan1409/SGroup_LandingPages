@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded",function() {
 	const box = document.getElementsByClassName('features__box--content');
 	window.addEventListener("scroll",function(){
 	var x = pageYOffset;
-	if(x > 780){
+	if(x > 840){
 		box[0].classList.add('box__fully');
 		box[1].classList.add('box__live');
 		box[2].classList.add('box__secure');
@@ -58,6 +58,30 @@ document.addEventListener("DOMContentLoaded",function() {
 			}
 		}
 	}
+//khai bao hai class parent va parentchild
+	// let close = document.getElementsByClassName('navbar__sTablet--close');
+	// let items = document.getElementsByClassName('navbar__mobile--dropdown');
+	
+	// if()
+	// //tao mot bien gia tri de check trang thai
+	// let _isClose = true;
+	
+	// // vong lap vi khi khai bao getElementsByClassName no chi lay gia tri theo mang
+	// for (let i = 0; i < 2; i++) {
+	// 	close.addEventListener('click', displayItems)
+	// 	function displayItems() {
+	// 		if (_isClose == true) {
+	// 			items[i].style.display = 'none';
+	// 			_isClose = false;
+	
+	// 		}
+	// 	}
+	// }
+	// let close = document.getElementsByClassName('navbar__sTablet');
+	// let items = document.getElementsByClassName('navbar__mobile--dropdown');
+	// if (close.style.visibility=='hidden'){
+	// 	for()
+	// }
 // Hàm tăng số
 function animateNumber(finalNumber, duration = 0, startNumber = 0, callback) {
 	const startTime = performance.now()
