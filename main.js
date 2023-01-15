@@ -216,3 +216,12 @@ function scrollToTop(){
 	});
 };
 scrollToTop();
+
+//
+$(document).ready(()=>{
+	let isMenuAlreadyOpen = false;
+	$('.navbar__btn').on('click',()=>{
+		  $('body').css("overflow",isMenuAlreadyOpen?"auto":"hidden")
+		  isMenuAlreadyOpen = !isMenuAlreadyOpen
+	})
+})

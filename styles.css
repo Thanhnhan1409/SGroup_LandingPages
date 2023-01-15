@@ -1,7 +1,8 @@
 body{
     margin:0px;
     padding: 0px;
-    overflow-x: hidden;
+    /* overflow-x: hidden;
+    overflow: hidden; */
 }
 html{
     scroll-behavior: smooth;
@@ -16,11 +17,13 @@ a{
     text-decoration: none;
     cursor: pointer;
 }
+.over-hidden{
+    overflow: hidden !important;
+}
 .main{
     font-family: 'Poppins', sans-serif !important;
-    /* height: 692vw; */
-    /* z-index: -2; */
     position: relative;
+    overflow-x: hidden; 
 }
 #top-up {
     background-color: #3c3c3c;
@@ -58,7 +61,7 @@ a{
     animation: header-scroll 0.2s linear;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     height: 80px;
-    z-index: 99;
+    z-index: 9;
     margin: 0 auto;
     padding: 10px 14vw 1vw 14vw;
 }
@@ -120,7 +123,7 @@ a{
     transition: transform 0.3s linear;
     display: none;
     opacity: 0;
-    z-index: 2;
+    z-index: 10;
 }
 .navbar__sTablet{
     position: fixed;
@@ -135,6 +138,7 @@ a{
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 99;
+    overflow-y: scroll;
 }
 .navbar__sTablet--list{
     padding: 20px 0px;
@@ -152,7 +156,7 @@ a{
     color: rgb(179, 178, 178);
     cursor: pointer;
 }
-.checkbox--list:checked ~ .nav__overlay--sTalet{
+/* .checkbox--list:checked ~ .nav__overlay--sTalet{
     opacity: 1;
     transform: translateX(0);
 }
@@ -164,13 +168,14 @@ a{
 .checkbox--list:checked ~ .navbar__btn {
     transform: translateY(-100%);
     transition: 0.3s;
-}
+} */
 .navbar__sTablet--dropdown{
     padding: 15px 20px;
     border-bottom: 1px solid rgb(220, 215, 215);
 }
 .navbar__sTablet--dropdown i{
     color: #d3d3d3;
+
 }
 .navbar__sTablet--dropdown a{
     color: rgb(71, 70, 70);
@@ -188,14 +193,19 @@ a{
 .navbar__mobile--dropdown{
     position: relative;
     left: -40px;
-    top:10px;
+    top:20px;
     font-size: 13px;
     margin-bottom: 30px;
     line-height: 2.5;
-    font-weight: 600;
+    font-weight: 700;
     display: none; 
 }
-
+.pageschild--icon{
+    transition: all 0.2s linear;
+}
+.navbar__mobile--dropdown a:hover .pageschild--icon{
+    transform: rotate(-90deg);
+}
 /* PC */
 .navbar__list{
     display: flex;
@@ -292,6 +302,13 @@ a{
     opacity: 1;
     visibility: visible;
     transform: translateY(-30px);
+}
+.navbar__Pageslist--dropdown i{
+    transition: all 0.2s linear;
+    transform: rotate(0deg);
+}
+.navbar__Pageslist--dropdown:hover i{
+    transform: rotate(-90deg);
 }
 .navbar__Pagelist--warning {
     background-color: rgb(248, 177, 84);
@@ -538,6 +555,15 @@ a{
         visibility: visible;
     }
 }
+/* @media only screen and (min-width: 1023px)
+{
+   .navbar__btn{
+        visibility: hidden !important ;
+   }
+   .nav__overlay--sTalet{
+        display: none;
+    }
+} */
 @media only screen and (max-width: 1023px)
 {
     .navbar__list{
@@ -1480,6 +1506,19 @@ a{
     color: #7c4fe0;
 }
 @media only screen and (min-width: 740px) and (max-width: 1023px){
+    .checkbox--list:checked ~ .nav__overlay--sTalet{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .checkbox--list:checked ~ .navbar__sTablet{
+        opacity: 1;
+        transform: translateX(0%);
+        visibility: visible;    
+    }
+    .checkbox--list:checked ~ .navbar__btn {
+        transform: translateY(-100%);
+        transition: 0.3s;
+    }
     .home__content h1{
         font-size: 48px;
     }
@@ -1667,6 +1706,19 @@ a{
     }
     .navbar-sticky .fa-bars{
         padding: 0;
+    }
+    .checkbox--list:checked ~ .nav__overlay--sTalet{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .checkbox--list:checked ~ .navbar__sTablet{
+        opacity: 1;
+        transform: translateX(0%);
+        visibility: visible;    
+    }
+    .checkbox--list:checked ~ .navbar__btn {
+        transform: translateY(-100%);
+        transition: 0.3s;
     }
     .home__content{
         flex-direction: column;
