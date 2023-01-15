@@ -1,8 +1,6 @@
 body{
     margin:0px;
     padding: 0px;
-    /* overflow-x: hidden;
-    overflow: hidden; */
 }
 html{
     scroll-behavior: smooth;
@@ -17,9 +15,7 @@ a{
     text-decoration: none;
     cursor: pointer;
 }
-.over-hidden{
-    overflow: hidden !important;
-}
+
 .main{
     font-family: 'Poppins', sans-serif !important;
     position: relative;
@@ -61,7 +57,7 @@ a{
     animation: header-scroll 0.2s linear;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     height: 80px;
-    z-index: 9;
+    z-index: 11;
     margin: 0 auto;
     padding: 10px 14vw 1vw 14vw;
 }
@@ -80,7 +76,7 @@ a{
     }
 }
 .navbar-sticky img{
-    margin-top: 0;
+    margin-top: 10px;
 }
 .navbar-sticky .navbar__list--item a{
     color: #2c2e30;
@@ -89,8 +85,8 @@ a{
     color: #d3d3d3;
 }
 .navbar-sticky .fa-bars{
-    color: #7c7c7d;
-    padding-right: 30px ;
+    color: #9d9da1;
+    padding-right: 0px ;
 }
 .navbar-sticky .pages-item__comingsoon{
     color: #2c2e30;

@@ -69,11 +69,14 @@ document.addEventListener("DOMContentLoaded",function() {
 //close nav-mobile
 	let close = document.getElementsByClassName('navbar__sTablet--close');
 	let items = document.getElementsByClassName('navbar__mobile--dropdown');
+	let _isClode= false;
 	for (let i = 0; i < close.length; i++) {
 		close[i].addEventListener('click', displayItems)
 		function displayItems() {
-			for(let j=0; items.length; j++)
-				items[j].style.display = 'none';
+			for(let j=0; j< items.length; j++)
+			{
+				items[j].style.display ='none';
+			}
 		}
 	}
 	
@@ -224,4 +227,8 @@ $(document).ready(()=>{
 		  $('body').css("overflow",isMenuAlreadyOpen?"auto":"hidden")
 		  isMenuAlreadyOpen = !isMenuAlreadyOpen
 	})
+	$('.navbar__sTablet--close').on('click',()=>{
+		$('body').css("overflow",isMenuAlreadyOpen?"auto":"hidden")
+		isMenuAlreadyOpen = !isMenuAlreadyOpen
+  })
 })
