@@ -27,7 +27,7 @@ a{
     border-radius: 5px;
     cursor: pointer;
     position: fixed;
-    z-index: 9999;
+    z-index: 95;
     font-size: 20px;
     color: white;
     bottom: 20px;
